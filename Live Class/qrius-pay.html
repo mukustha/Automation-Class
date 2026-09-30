@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qrius Pay</title>
+  <style>
+    body {
+      max-width: 720px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      font-family: Arial, sans-serif;
+      color: #222;
+    }
+
+    header, form, table, footer {
+      margin-bottom: 1.5rem;
+    }
+
+    #balance {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: minmax(120px, 160px) minmax(160px, 1fr);
+      gap: 0.75rem;
+      max-width: 440px;
+      align-items: center;
+    }
+
+    input, button {
+      box-sizing: border-box;
+      padding: 0.5rem;
+      font: inherit;
+    }
+
+    form button {
+      grid-column: 2;
+      justify-self: start;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 0.5rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    footer {
+      display: flex;
+      gap: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Qrius Pay</h1>
+    <p id="balance">Rs 0.00</p>
+  </header>
+
+  <main>
+    <form id="login-form">
+      <label for="mobile-number">Mobile number</label>
+      <input id="mobile-number" name="mobile" type="tel" autocomplete="tel">
+      <label for="mpin">mPIN</label>
+      <input id="mpin" name="mpin" type="password" inputmode="numeric">
+      <button type="submit">Log in</button>
+    </form>
+
+    <form id="send-form">
+      <label for="recipient-number">Recipient number</label>
+      <input id="recipient-number" name="recipient" type="tel">
+      <label for="amount">Amount</label>
+      <input id="amount" name="amount" type="number" min="1" step="0.01">
+      <button type="submit" disabled>Send</button>
+    </form>
+
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Channel</th><th>Amount</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Sita</td><td>eSewa</td><td>1200</td><td>Success</td></tr>
+        <tr><td>Ramesh</td><td>Khalti</td><td>450</td><td>Failed</td></tr>
+        <tr><td>Anita</td><td>ConnectIPS</td><td>8000</td><td>Success</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <a href="#baisakh">Baisakh</a>
+    <a href="#jestha">Jestha</a>
+    <a href="#help">Help</a>
+  </footer>
+</body>
+</html>
+Qrius Pay                 (header)
+  Rs 0.00                 (#balance)
+
+Mobile number [________]  (#login-form)
+mPIN          [________]
+              [ Log in ]
+
+[Recipient number      ]  (#send-form)
+[Amount                ]
+              [ Send ]    (disabled)
+
+Name    Channel     Amount  Status
+Sita    eSewa       1200    Success
+Ramesh  Khalti      450     Failed
+Anita   ConnectIPS  8000    Success
+
+Baisakh   Jestha   Help     (links)
